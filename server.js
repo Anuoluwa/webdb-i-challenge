@@ -1,9 +1,20 @@
 const express = require('express');
-
-const db = require('./data/dbConfig.js');
+import routes from './accounts'
 
 const server = express();
-
 server.use(express.json());
 
-module.exports = server;
+server.use('/api', routes);
+
+server.get('/', (req, res) => {
+    res.json(`<h2>Welcome to Accounts</h2>`)
+  });
+  
+  server.all('*', (req, res) => {
+    res.json(`
+      Sorry, no such route, try again!
+    `);
+  });
+
+
+export default server;

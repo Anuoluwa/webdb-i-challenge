@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "start": "babel-node index.js",
+    "server": "nodemon --exec babel-node index.js"
   },
   "repository": "https://github.com/LambdaSchool/webdb-i-challenge",
   "dependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "dotenv": "^8.0.0",
+    "helmet": "^3.18.0",
     "express": "^4.17.1",
     "knex": "^0.19.0",
     "sqlite3": "^4.0.9"
